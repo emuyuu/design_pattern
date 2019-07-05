@@ -37,13 +37,21 @@ class StrawHouseFactory:
         self.num_of_door = None
         self.house_type = "藁"
 
-    def create_window(self, num_of_window=3):
-        self.num_of_window = num_of_window
-        return Window(self.num_of_window)
+    @classmethod
+    def create_window(cls, num_of_window=3):
+        return cls.Window(num_of_window)
 
-    def create_door(self, num_of_door=1):
-        self.num_of_door = num_of_door
-        return Door(self.num_of_door)
+    @classmethod
+    def create_door(cls, num_of_door=1):
+        return cls.Door(num_of_door)
+
+    class Window:
+        def __init__(self, num_of_window):
+            self.num_of_window = num_of_window
+
+    class Door:
+        def __init__(self, num_of_door):
+            self.num_of_door = num_of_door
 
 
 class BrickHouseFactory:
@@ -52,23 +60,20 @@ class BrickHouseFactory:
         self.num_of_door = None
         self.house_type = "煉瓦"
 
-    def create_window(self, num_of_window=10):
-        self.num_of_window = num_of_window
-        return Window(self.num_of_window)
+    @classmethod
+    def create_window(cls, num_of_window=10):
+        return cls.Window(num_of_window)
 
-    def create_door(self, num_of_door=2):
-        self.num_of_door = num_of_door
-        return Door(self.num_of_door)
+    def create_door(cls, num_of_door=2):
+        return cls.Door(num_of_door)
 
+    class Window:
+        def __init__(self, num_of_window):
+            self.num_of_window = num_of_window
 
-class Window:
-    def __init__(self, num_of_window):
-        self.num_of_window = num_of_window
-
-
-class Door:
-    def __init__(self, num_of_door):
-        self.num_of_door = num_of_door
+    class Door:
+        def __init__(self, num_of_door):
+            self.num_of_door = num_of_door
 
 
 if __name__ == "__main__":
