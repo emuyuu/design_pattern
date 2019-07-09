@@ -14,6 +14,9 @@
 # 6. 窓の数、ドアの数を数えるて変数に入れるよ！
 # 7. house変数にまとめるよ！終了！
 
+# 特徴：
+# 各パーツ（windowとかdoor）から編集できる。
+
 
 def main():
     create_house(StrawHouseFactory())
