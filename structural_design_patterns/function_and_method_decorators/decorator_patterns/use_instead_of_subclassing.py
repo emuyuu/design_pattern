@@ -1,0 +1,1 @@
+# using a class decorator instead of subclassing
