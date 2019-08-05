@@ -9,4 +9,4 @@
 
 ### Book
 
-[実践 Python 3](https://www.oreilly.co.jp/books/9784873117393/)
+[Python in Practice](https://www.oreilly.co.jp/books/9784873117393/)
