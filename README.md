@@ -5,6 +5,7 @@
 ### Website
 
 [Pythonにおけるデザインパターン](https://pydp.info/)
+(This reference is in Japanese.)
 
 ### Book
 
