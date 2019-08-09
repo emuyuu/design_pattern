@@ -2,6 +2,8 @@
 # アダプター。
 # 本来そのインスタンスでは使うことのできないメソッドを呼び出すことができるようにする。
 
+# adapter patternにもいろいろあるみたいだ
+
 
 class Dog:
     def __init__(self):
@@ -56,16 +58,18 @@ class Adapter:
 def main():
     dog = Dog()
     adapted_dog = Adapter(dog, make_noise=dog.bark)
-    print(adapted_dog.original_dict())
-    print(adapted_dog.__dict__)
+    print(f'original dict dog: {adapted_dog.original_dict()}')
+    print(f'adapted dict: {adapted_dog.__dict__}')
     # {'obj': <__main__.Dog object at 0x000001A1B0228908>,
     #  'make_noise': <bound method Dog.bark of <__main__.Dog object at 0x000001A1B0228908>>}
     # ↑ `make_noise`メソッドが`Dog.bark`と紐づけられている
+    print(f'self.name: {adapted_dog.name}')
     print(adapted_dog.make_noise())
+    print('-------------------------------')
 
     cat = Cat()
     adapted_cat = Adapter(cat, make_noise=cat.meow)
-    print(adapted_cat.__dict__)
+    print(f'adapted dict cat: {adapted_cat.__dict__}')
     # {'obj': <__main__.Cat object at 0x000002BC461C8A20>,
     #  'make_noise': <bound method Cat.meow of <__main__.Cat object at 0x000002BC461C8A20>>}
     print(adapted_cat.make_noise())
