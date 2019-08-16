@@ -29,6 +29,7 @@ class Numbers:
 
 numbers = Numbers()
 print('non iterable class object')
+print(f'iterable?: {hasattr(numbers, "__iter__")}')
 for i in numbers.number_list:
     print(i)
 
@@ -41,7 +42,11 @@ class IterNumbers:
         return iter(self.number_list)
 
 
-iter_num = IterNumbers()
+iter_numbers = IterNumbers()
 print('iterable class object')
-for i in iter_num:
+print(f'iterable?: {hasattr(iter_numbers, "__iter__")}')
+for i in iter_numbers:
     print(i)
+
+
+# -> 同じ出力だけれど、for文を書く時の量が少ない
