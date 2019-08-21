@@ -50,3 +50,15 @@ for i in iter_numbers:
 
 
 # -> 同じ出力だけれど、for文を書く時の量が少ない
+
+
+class IterNumbersSequenceProtocol:
+    def __getitem__(self, index):
+        if 0 <= index < 6:
+            return index
+        raise IndexError()
+
+print('iterable class object using sequence protocol(=__getitem__())')
+print(f'iterable?: {hasattr(IterNumbersSequenceProtocol(), "__iter__")}')
+for num in IterNumbersSequenceProtocol():
+    print(num)
