@@ -44,13 +44,13 @@ class Button(Subject):
 class Observer1:
     @staticmethod
     def update():
-        print('Observer1 notified! Button changed')
+        print('Observer1 notified! Button changed :D')
 
 
 class Observer2:
     @staticmethod
     def update():
-        print('Observer2 notified! Button changed')
+        print('Observer2 notified! Button changed :)')
 
 
 if __name__ == '__main__':
@@ -61,10 +61,14 @@ if __name__ == '__main__':
     button.add_observer(observer1)
     button.add_observer(observer2)
 
+    print(f'▶ The button\'s state is {button.button_state}')
     button.button_state = 10
+    print(f'▶ The button\'s state is {button.button_state}')
 
     print('---------------------------')
 
+    print(f'▶ The button\'s state is {button.button_state}')
+    print('~ detach observer1 ~')
     button.detach_observer(observer1)
-
     button.button_state = 20
+    print(f'▶ The button\'s state is {button.button_state}')
