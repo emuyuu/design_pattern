@@ -27,7 +27,7 @@ class Subject:
 
 class Button(Subject):
     def __init__(self):
-        Subject.__init__(self)
+        super().__init__()
         self._button_state = 0
 
     @property
